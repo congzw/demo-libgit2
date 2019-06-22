@@ -10,6 +10,14 @@ namespace GitInit.ViewModel
             Repository.Init(repoPath);
         }
 
+        public void SetConfig(string repoPath, string key, string value)
+        {
+            using (var repo = new Repository(repoPath))
+            {
+                repo.Config.Set(key, value);
+            }
+        }
+
         public void Delete(string repoPath)
         {
             if (Directory.Exists(repoPath))

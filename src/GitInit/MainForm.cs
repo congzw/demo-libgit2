@@ -29,6 +29,18 @@ namespace GitInit
             var newSlnPath = String.Format(@".\{0}\src\{0}.sln", repo);
             Main.ChangeRepositoryAsSln(slnPath, newSlnPath);
             Main.Init(repo);
+
+            var username = this.txtUsername.Text.Trim();
+            if (!string.IsNullOrWhiteSpace(username))
+            {
+                Main.SetConfig(repo, "user.name", username);
+            }
+
+            var email = this.txtEmail.Text.Trim();
+            if (!string.IsNullOrWhiteSpace(email))
+            {
+                Main.SetConfig(repo, "user.email", email);
+            }
         }
         
         private void MainForm_Load(object sender, EventArgs e)

@@ -1,3 +1,3 @@
-# todo
+# git init
 
-## todo list
+- add username and email support 20190522
