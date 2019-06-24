@@ -1,3 +1,4 @@
 # git init
 
-- add username and email support 20190522
+- support set github remote and upstream branch 2019624
+- support set username and email  20190522
