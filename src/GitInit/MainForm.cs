@@ -17,19 +17,6 @@ namespace GitInit
 
         private void btnInit_Click(object sender, EventArgs e)
         {
-            //var repo = "demo-empty-git";
-            //var username = "congzw";
-            //Main.Delete(repo);
-            //Main.DirectoryCopy(@".\_Template", repo, true);
-            //var slnPath = String.Format(@".\{0}\src\foo.sln", repo);
-            //var newSlnPath = String.Format(@".\{0}\src\{0}.sln", repo);
-            //Main.ChangeRepositoryAsSln(slnPath, newSlnPath);
-            //Main.Init(repo);
-            //Main.SetConfig(repo, "user.name", username);
-            //Main.SetConfig(repo, "user.email", "congzw@foo.com");
-            //Main.SetGithubRemote(repo, username, "origin", "master");
-            //Main.SetUpstreamBranch(repo, "origin", "master");
-            //return;
             var repo = this.txtRepo.Text.TrimEnd();
             if (string.IsNullOrWhiteSpace(repo))
             {
@@ -66,13 +53,17 @@ namespace GitInit
                 TheConfig.Email = email;
             }
 
-            //git push -u origin master
-            if (!string.IsNullOrWhiteSpace(username))
+            if (this.cbxInitFirstCommit.Checked)
             {
-                Main.SetGithubRemote(repo, username, "origin", "master");
-                Main.SetUpstreamBranch(repo, "origin", "master", username, email);
+                //git push -u origin master
+                if (!string.IsNullOrWhiteSpace(username))
+                {
+                    Main.SetGithubRemote(repo, username, "origin", "master");
+                    Main.SetUpstreamBranch(repo, "origin", "master", username, email);
+                }
             }
-            
+
+            TheConfig.InitFirstCommit = this.cbxInitFirstCommit.Checked;
             MyConfigHelper.Instance.TrySave(TheConfig);
             MessageBox.Show(@"init completed!");
         }
@@ -84,6 +75,7 @@ namespace GitInit
             this.txtRepo.Text = @"myRepo";
             this.txtUsername.Text = TheConfig.Username;
             this.txtEmail.Text = TheConfig.Email;
+            this.cbxInitFirstCommit.Checked = TheConfig.InitFirstCommit;
         }
     }
 }

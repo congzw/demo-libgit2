@@ -36,6 +36,7 @@
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.cbxInitFirstCommit = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // txtMessage
@@ -65,15 +66,15 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtRepo.Location = new System.Drawing.Point(100, 190);
             this.txtRepo.Name = "txtRepo";
-            this.txtRepo.Size = new System.Drawing.Size(389, 21);
+            this.txtRepo.Size = new System.Drawing.Size(370, 21);
             this.txtRepo.TabIndex = 12;
             // 
             // btnInit
             // 
             this.btnInit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnInit.Location = new System.Drawing.Point(497, 188);
+            this.btnInit.Location = new System.Drawing.Point(476, 188);
             this.btnInit.Name = "btnInit";
-            this.btnInit.Size = new System.Drawing.Size(75, 23);
+            this.btnInit.Size = new System.Drawing.Size(96, 23);
             this.btnInit.TabIndex = 11;
             this.btnInit.Text = "Init";
             this.btnInit.UseVisualStyleBackColor = true;
@@ -93,7 +94,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtEmail.Location = new System.Drawing.Point(264, 163);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(225, 21);
+            this.txtEmail.Size = new System.Drawing.Size(206, 21);
             this.txtEmail.TabIndex = 16;
             // 
             // label2
@@ -116,11 +117,22 @@
             this.label3.TabIndex = 18;
             this.label3.Text = "email:";
             // 
+            // cbxInitFirstCommit
+            // 
+            this.cbxInitFirstCommit.AutoSize = true;
+            this.cbxInitFirstCommit.Location = new System.Drawing.Point(476, 166);
+            this.cbxInitFirstCommit.Name = "cbxInitFirstCommit";
+            this.cbxInitFirstCommit.Size = new System.Drawing.Size(84, 16);
+            this.cbxInitFirstCommit.TabIndex = 19;
+            this.cbxInitFirstCommit.Text = "初始化提交";
+            this.cbxInitFirstCommit.UseVisualStyleBackColor = true;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(584, 223);
+            this.Controls.Add(this.cbxInitFirstCommit);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtEmail);
@@ -146,6 +158,7 @@
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.CheckBox cbxInitFirstCommit;
     }
 }
 
