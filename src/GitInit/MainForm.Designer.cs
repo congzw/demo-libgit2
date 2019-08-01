@@ -119,6 +119,7 @@
             // 
             // cbxInitFirstCommit
             // 
+            this.cbxInitFirstCommit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.cbxInitFirstCommit.AutoSize = true;
             this.cbxInitFirstCommit.Location = new System.Drawing.Point(476, 166);
             this.cbxInitFirstCommit.Name = "cbxInitFirstCommit";
