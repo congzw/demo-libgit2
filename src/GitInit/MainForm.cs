@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.IO;
 using System.Windows.Forms;
 using GitInit.ViewModel;
@@ -66,6 +67,7 @@ namespace GitInit
             TheConfig.InitFirstCommit = this.cbxInitFirstCommit.Checked;
             MyConfigHelper.Instance.TrySave(TheConfig);
             MessageBox.Show(@"init completed!");
+            Process.Start(repo);
         }
 
         public MyConfig TheConfig { get; set; }
