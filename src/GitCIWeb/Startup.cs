@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Builder;
+﻿using GitCIWeb.Libs;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
@@ -18,6 +19,10 @@ namespace GitCIWeb
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+
+            var myGitConfig = new MyGitConfig() { Username = "congzw", Email = "congzw@zqnb.com", Password = "DDkk1212" };
+            services.AddSingleton(myGitConfig);
+            services.AddSingleton<MyGitHelper>();
         }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)

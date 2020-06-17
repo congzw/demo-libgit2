@@ -162,6 +162,13 @@ namespace GitCIWeb.Libs
             return MessageResult.CreateSuccess("Commit Success");
         }
 
+
+        public MessageResult Pull(Repository repo, string branchName, string remoteName = "origin")
+        {
+            //todo
+            return MessageResult.CreateSuccess("todo pull");
+        }
+
         public MessageResult Push(Repository repo, string branchName, string remoteName = "origin")
         {
             var remote = repo.Network.Remotes[remoteName];
