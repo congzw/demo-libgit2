@@ -40,6 +40,8 @@ namespace GitInit
             Main.ChangeRepositoryAsSln(slnPath, newSlnPath);
             Main.Init(repo);
 
+            Main.SetConfig(repo, "credential.helper", "wincred");
+
             var username = this.txtUsername.Text.Trim();
             if (!string.IsNullOrWhiteSpace(username))
             {
@@ -53,6 +55,7 @@ namespace GitInit
                 Main.SetConfig(repo, "user.email", email);
                 TheConfig.Email = email;
             }
+
 
             if (this.cbxInitFirstCommit.Checked)
             {
